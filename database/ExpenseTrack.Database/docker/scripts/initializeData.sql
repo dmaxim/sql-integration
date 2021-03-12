@@ -58,7 +58,7 @@ GO
 INSERT INTO dbo.ExpenseOwner
 (OwnerUserId, FirstName, LastName)
 VALUES
-('dmaxim@mxinformatics.com', 'Dan', 'Maxim')
+('test@aol.com', 'Test', 'User')
 
 GO
 
@@ -86,17 +86,17 @@ GO
 INSERT INTO dbo.Employer
 (EmployerId, EmployerName, EmployerDescription)
 VALUES
-(1, 'Atlas Coast', 'Atlas Coast')
+(1, 'Employer One', 'Employer One')
 
 INSERT INTO dbo.Employer
 (EmployerId, EmployerName, EmployerDescription)
 VALUES
-(2, 'MxInformatics', 'MxInformatics')
+(2, 'Employer Two', 'Employer Two')
 
 INSERT INTO dbo.Employer
 (EmployerId, EmployerName, EmployerDescription)
 VALUES
-(3, 'T4S Partners', 'T4S Partners')
+(3, 'Employer Three', 'Employer Three')
 
 
 SET IDENTITY_INSERT dbo.Employer OFF

@@ -1,11 +1,10 @@
-﻿version: '3.5'
+﻿version: '3.7'
 
 services: 
   expensetrack.database:
-    image:  dmaxim/mxinfo.expensetrack.database:v1.3
-    container_name: mxinfo.expensetrack.database
+    image:  sql.integration.database:v0.6
+    container_name: sql.integration.database
     environment:
       - "ACCEPT_EULA=Y"
-      - "SA_PASSWORD=0greVpRSqDfxgfoflI2c"
     ports:
       - "1944:1433"
