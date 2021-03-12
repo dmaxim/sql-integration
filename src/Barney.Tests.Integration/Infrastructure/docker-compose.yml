@@ -1,0 +1,10 @@
+﻿version: '3.7'
+
+services: 
+  expensetrack.database:
+    image:  sql.integration.database:v0.6
+    container_name: sql.integration.tests
+    environment:
+      - "ACCEPT_EULA=Y"
+    ports:
+      - "2044:1433"
