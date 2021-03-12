@@ -1,2 +1,3 @@
-*.sh text=eol=lf
-database/ExpenseTrack.Database/dockerscripts/* text=eol=lf
+* text=auto
+*.sh text eol=lf
+database/ExpenseTrack.Database/dockerscripts/* text eol=lf
