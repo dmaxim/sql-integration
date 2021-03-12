@@ -13,10 +13,10 @@ namespace Barney.Infrastructure.DependencyInjection
     public class CoreModule : Module
     {
 
-        private readonly BarneyWebUIConfiguration _webUiConfiguration;
+        private readonly BarneyAppConfiguration _webUiConfiguration;
 
 
-        public CoreModule(BarneyWebUIConfiguration webUiConfiguration)
+        public CoreModule(BarneyAppConfiguration webUiConfiguration)
         {
             _webUiConfiguration = webUiConfiguration ?? throw new ArgumentNullException(nameof(webUiConfiguration));
 

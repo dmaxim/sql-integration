@@ -7,7 +7,7 @@ namespace Barney.Infrastructure.DependencyInjection
 {
     public static class DependencyBuilderFactory
     {
-        public static ContainerBuilder Create(BarneyWebUIConfiguration webUiConfiguration)
+        public static ContainerBuilder Create(BarneyAppConfiguration webUiConfiguration)
         {
             var builder = new ContainerBuilder();
             builder.RegisterModule(new CoreModule(webUiConfiguration));

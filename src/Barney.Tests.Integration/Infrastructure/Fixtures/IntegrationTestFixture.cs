@@ -9,17 +9,23 @@ namespace Barney.Tests.Integration.Infrastructure.Fixtures
     public class IntegrationTestFixture : IDisposable
     {
         private readonly string _dockerComposeDirectory;
-        private readonly bool _useDockerDependencies;
+        private readonly DependencyFixture _dependencyFixture;
 
         public IntegrationTestFixture()
         {
-            _useDockerDependencies = true;
-
-            if(_useDockerDependencies)
+            _dependencyFixture = new DependencyFixture();
+            
+            if(_dependencyFixture.TestConfiguration.UseDockerDependencies)
             {
                 _dockerComposeDirectory = GetDockerComposeDirectory();
                 InitializeContainers();
             }
+
+        }
+
+        public T Resolve<T>()
+        {
+            return _dependencyFixture.Resolve<T>();
 
         }
 
@@ -75,10 +81,12 @@ namespace Barney.Tests.Integration.Infrastructure.Fixtures
 
         public void Dispose()
         {
-            if(_useDockerDependencies)
+            if(_dependencyFixture.TestConfiguration.UseDockerDependencies)
             {
                 TeardownContainers();
             }
+
+            _dependencyFixture?.Dispose();
             
         }
     }

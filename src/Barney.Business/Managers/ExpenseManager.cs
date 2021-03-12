@@ -21,9 +21,9 @@ namespace Barney.Business.Managers
             _expenseClassificationRepository = expenseClassificationRepository;
             _expenseOwnerRepository = expenseOwnerRepository;
         }
-        public Task<ICollection<Expense>> GetAllAsync()
+        public async Task<ICollection<Expense>> GetAllAsync()
         {
-            throw new System.NotImplementedException();
+            return await _expenseRepository.GetAll().ToListAsync();
         }
 
         public async Task<ICollection<Expense>> GetIndividualExpensesAsync(string ownerUserId)

@@ -3,9 +3,9 @@ using System;
 
 namespace Barney.Infrastructure.Configuration
 { 
-    public class BarneyWebUIConfiguration
+    public class BarneyAppConfiguration
     {
-        public BarneyWebUIConfiguration(string databaseConnectionString)
+        public BarneyAppConfiguration(string databaseConnectionString)
         {
             if (string.IsNullOrWhiteSpace(databaseConnectionString))
             {

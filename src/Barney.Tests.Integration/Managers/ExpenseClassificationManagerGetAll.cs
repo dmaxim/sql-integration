@@ -1,4 +1,7 @@
-﻿using Barney.Tests.Integration.Infrastructure.Fixtures;
+﻿using Barney.Business.Managers.Interfaces;
+using Barney.Tests.Integration.Infrastructure.Fixtures;
+using System.Linq;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace Barney.Tests.Integration.Managers
@@ -14,12 +17,14 @@ namespace Barney.Tests.Integration.Managers
         }
 
         [Fact]   
-        public void Returns_A_List_Of_Expense_Classifications()
+        public async Task Returns_A_List_Of_Expense_Classifications()
         {
-            
-            var x = "stop here";
 
-            var y = "no go";
+            var expenseClassificationManager = _testFixture.Resolve<IExpenseClassificationManager>();
+
+            var expenseClassifications = await expenseClassificationManager.GetAllAsync();
+
+            Assert.True(expenseClassifications.Any());
 
         }
     }
