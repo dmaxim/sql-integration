@@ -352,3 +352,6 @@ MigrationBackup/
 
 #SQL Data Tools
 *.jfm
+
+# Settings files
+appsettings.secrets.json
